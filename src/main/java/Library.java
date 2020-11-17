@@ -6,7 +6,7 @@ public class Library {
 
     public Library(int capacity) {
         this.capacity = capacity;
-        this.books = new ArrayList<Book>();
+        this.books = new ArrayList<>();
     }
 
     public void addBook(Book book) {
@@ -20,10 +20,15 @@ public class Library {
     }
 
     public boolean isStockFull() {
-        if (this.countBooks() >= this.capacity) {
-            return true;
+        return this.countBooks() >= this.capacity;
+    }
+
+    public Book lendBook() {
+        Book bookToLend = null;
+        if (this.countBooks() > 0) {
+            bookToLend = this.books.remove(0);
         }
-        return false;
+        return bookToLend;
     }
 
 }
