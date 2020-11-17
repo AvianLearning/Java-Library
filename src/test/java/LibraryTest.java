@@ -32,4 +32,22 @@ public class LibraryTest {
         assertFalse(library.isStockFull());
     }
 
+    @Test
+    public void canAddABookIfCapacity() {
+        Book bookFour = new Book("Bleak House", "Charles Dickens", "Classic fiction");
+        library.addBook(bookFour);
+        assertEquals(4, library.countBooks());
+    }
+
+    @Test
+    public void cannotAddBookIfOverCapacity() {
+        Book bookFour = new Book("Bleak House", "Charles Dickens", "Classic fiction");
+        Book bookFive = new Book("Python Crash Course", "Eric Matthes", "Computing");
+        Book bookSix = new Book("Crime and Punishment", "Fyodor Dostoyevsky", "Classic fiction");
+        library.addBook(bookFour);
+        library.addBook(bookFive);
+        library.addBook(bookSix);
+        assertEquals(5, library.countBooks());
+    }
+
 }

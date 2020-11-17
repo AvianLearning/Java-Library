@@ -10,7 +10,9 @@ public class Library {
     }
 
     public void addBook(Book book) {
-        this.books.add(book);
+        if (!isStockFull()) {
+            this.books.add(book);
+        }
     }
 
     public int countBooks() {
@@ -18,7 +20,7 @@ public class Library {
     }
 
     public boolean isStockFull() {
-        if (countBooks() > this.capacity) {
+        if (this.countBooks() >= this.capacity) {
             return true;
         }
         return false;
