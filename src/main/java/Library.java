@@ -9,5 +9,13 @@ public class Library {
         this.books = new ArrayList<Book>();
     }
 
+    public void addBook(Book book) {
+        this.books.add(book);
+    }
+
+    public int countBooks() {
+        return this.books.size();
+    }
+
 }
 

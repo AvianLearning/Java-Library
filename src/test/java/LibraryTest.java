@@ -1,4 +1,7 @@
 import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class LibraryTest {
 
@@ -13,6 +16,15 @@ public class LibraryTest {
         bookOne = new Book("The Exorcist", "William Peter Blatty", "Horror");
         bookTwo = new Book("Solaris", "Stanislaw Lem", "Science fiction");
         bookThree = new Book("The Snowman", "Jo Nesbo", "Crime fiction");
+        library.addBook(bookOne);
+        library.addBook(bookTwo);
+        library.addBook(bookThree);
     }
+
+    @Test
+    public void canCountNumberOfBooksInLibrary() {
+        assertEquals(3, library.countBooks());
+    }
+
 
 }
