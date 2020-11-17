@@ -2,6 +2,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 public class LibraryTest {
 
@@ -12,7 +13,7 @@ public class LibraryTest {
 
     @Before
     public void setUp() {
-        library = new Library(10);
+        library = new Library(5);
         bookOne = new Book("The Exorcist", "William Peter Blatty", "Horror");
         bookTwo = new Book("Solaris", "Stanislaw Lem", "Science fiction");
         bookThree = new Book("The Snowman", "Jo Nesbo", "Crime fiction");
@@ -26,5 +27,9 @@ public class LibraryTest {
         assertEquals(3, library.countBooks());
     }
 
+    @Test
+    public void canCheckIfStockIsFull() {
+        assertFalse(library.isStockFull());
+    }
 
 }

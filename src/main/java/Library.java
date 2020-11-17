@@ -17,5 +17,12 @@ public class Library {
         return this.books.size();
     }
 
+    public boolean isStockFull() {
+        if (countBooks() > this.capacity) {
+            return true;
+        }
+        return false;
+    }
+
 }
 
